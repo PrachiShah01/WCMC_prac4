@@ -35,6 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
       formstate.save();
     }
     if (email == 'prachi@gmail.com' && password == 'prachi') {
+      _enabled = true;
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -72,6 +73,9 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 child: Image.asset('assets/prac4img.png'),
               ),
+              SizedBox(
+                height: 60,
+              ),
               Text(
                 'Login Screen',
                 style: TextStyle(
@@ -81,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 60,
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -129,8 +133,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 20,
               ),
               Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(20.0),
                 child: RaisedButton(
+                  padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
                   onPressed: _enabled ? enableButton : null,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
@@ -139,9 +144,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text(
                     'Login',
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 20),
                   ),
                 ),
               ),

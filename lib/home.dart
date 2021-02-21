@@ -45,9 +45,9 @@ class third extends StatelessWidget {
       backgroundColor: Colors.red,
       body: Center(
         child: Text(
-          'Your account is disabled',
+          'Enter correct User Credentials',
           style: TextStyle(
-              fontWeight: FontWeight.w900, color: Colors.white, fontSize: 30),
+              fontWeight: FontWeight.w900, color: Colors.white, fontSize: 25),
         ),
       ),
     );
