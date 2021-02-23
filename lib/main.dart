@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
+import 'dart:io';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -23,7 +22,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
-
   Color bgcolor;
   bool _enabled = true;
   int counter = 3;
@@ -143,6 +141,24 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Color(0xFFcf8c29),
                   child: Text(
                     'Login',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 20),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: RaisedButton(
+                  padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
+                  onPressed: () => exit(0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  color: Color(0xFFcf8c29),
+                  child: Text(
+                    'Cancel',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
