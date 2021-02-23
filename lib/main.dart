@@ -32,17 +32,20 @@ class _MyHomePageState extends State<MyHomePage> {
     if (formstate.validate()) {
       formstate.save();
     }
-    if (email == 'prachi@gmail.com' && password == 'prachi') {
-      _enabled = true;
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => second(),
-        ),
-      );
-    } else {
+
+    if (email != 'prachi@gmail.com' || password != 'prachi') {
       setState(() {
         counter--;
+      });
+    } else {
+      setState(() {
+        _enabled = true;
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => second(),
+          ),
+        );
       });
     }
     if (counter == 0) {
@@ -101,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     }
                     return null;
                   },
-                  onSaved: (value) => email = value,
+                  onChanged: (value) => email = value,
                 ),
               ),
               SizedBox(
@@ -124,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     }
                     return null;
                   },
-                  onSaved: (value) => password = value,
+                  onChanged: (value) => password = value,
                 ),
               ),
               SizedBox(
