@@ -21,14 +21,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final GlobalKey<FormState> fkey = GlobalKey<FormState>();
+  final GlobalKey<FormState> formkey = GlobalKey<FormState>();
   Color bgcolor;
   bool _enabled = true;
   int counter = 3;
   String email, password;
 
   void enableButton() {
-    final formstate = fkey.currentState;
+    final formstate = formkey.currentState;
     if (formstate.validate()) {
       formstate.save();
     }
@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Form(
-        key: fkey,
+        key: formkey,
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
